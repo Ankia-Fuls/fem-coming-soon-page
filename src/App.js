@@ -24,10 +24,10 @@ function App() {
   return (
     <>
       <main className="main">
-        <div className="main__logo">
+        <header className="main__logo">
           <img src="./images/logo.svg" alt="Base Apparel logo" className="main__logo--item" />
-        </div>
-        <div className="main__image">
+        </header>
+        <div className="main__image" aria-hidden>
           <img src={useIsMobile() ? "./images/hero-mobile.jpg" : "./images/hero-desktop.jpg"} alt="" className="main__image--item" />
         </div>
 
@@ -38,7 +38,7 @@ function App() {
           <p className="main__text">Hello fellow shoppers! We're currently building our new fashion store.
             Add your email below to stay up-to-date with announcements and our launch deals.</p>
           <div className={error ? "main__email main__email--error" : "main__email"}>
-            <label htmlFor="email" className="sr-only">Email</label>
+            <label htmlFor="email" className="sr-only">Enter your email:</label>
             <input
               type="email" id="email" name="email"
               placeholder="Email Address"
@@ -48,7 +48,7 @@ function App() {
               required
               aria-invalid={error ? true : false} aria-describedby="error-message"></input>
             {error && <img src="./images/icon-error.svg" alt="" className="main__error-icon"></img>}
-            <button type="submit" className="main__email--button" onClick={checkEmail}>
+            <button type="submit" className="main__email--button" onClick={checkEmail} aria-label="Submit">
               <img src="./images/icon-arrow.svg" />
             </button>
           </div>
