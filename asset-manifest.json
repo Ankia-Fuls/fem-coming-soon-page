@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Ankia-Fuls/fem-coming-soon-page/static/css/main.df3c67e0.css",
+    "main.js": "/Ankia-Fuls/fem-coming-soon-page/static/js/main.a6bdf50f.js",
+    "static/media/bg-pattern-desktop.svg": "/Ankia-Fuls/fem-coming-soon-page/static/media/bg-pattern-desktop.964ebd4dd8014fd040d7.svg",
+    "index.html": "/Ankia-Fuls/fem-coming-soon-page/index.html",
+    "main.df3c67e0.css.map": "/Ankia-Fuls/fem-coming-soon-page/static/css/main.df3c67e0.css.map",
+    "main.a6bdf50f.js.map": "/Ankia-Fuls/fem-coming-soon-page/static/js/main.a6bdf50f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df3c67e0.css",
+    "static/js/main.a6bdf50f.js"
+  ]
+}
