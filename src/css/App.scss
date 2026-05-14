@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --pink-400: hsl(0, 36%, 70%);
+    --red-500: hsl(0, 93%, 68%);
+    --gray-900: hsl(0, 6%, 24%);
+    --gradient-1-start: hsl(0, 0%, 100%);
+    --gradient-1-end: hsl(0, 100%, 98%);
+    --gradient-2-start: hsl(0, 80%, 86%);
+    --gradient-2-end: hsl(0, 74%, 74%);
+    --attribution: hsl(228, 45%, 44%);
+}
+
+$lg: 1000px;
+$med: 630px;
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1rem;
+
+    background: linear-gradient(135deg, var(--gradient-1-start), var(--gradient-1-end));
+
+    @media only screen and (min-width: $med) {
+        background: none;
+        background-image: url("../../public/images/bg-pattern-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        background-color: var(--gradient-1-end);
+    }
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "logo"
+        "photo"
+        "info";
+
+    @media only screen and (min-width: $med) {
+        grid-template-columns: 65% auto;
+        grid-template-rows: 25% 75%;
+        grid-template-areas:
+            "logo photo"
+            "info photo"
+    }
+
+    @media only screen and (min-width: $lg) {
+        grid-template-columns: 58% auto;
+    }
+
+    &__logo {
+        grid-area: logo;
+
+        padding: 1.875rem 11.2vw;
+        max-height: 5.1875rem;
+
+        @media only screen and (min-width: $med) {
+            padding: 4.0625rem 11.6vw;
+            max-height: none;
+            // height: 100%;
+        }
+
+        &--item {
+            height: 100%;
+
+            @media only screen and (min-width: $med) {
+                height: 2.0625rem;
+            }
+        }
+    }
+
+    &__image {
+        grid-area: photo;
+        width: 100%;
+        max-height: 16rem;
+        overflow: hidden;
+
+        @media only screen and (min-width: $med) {
+            max-height: none;
+        }
+
+        &--item {
+            width: 100%;
+            object-fit: cover;
+
+            @media only screen and (min-width: $med) {
+                height: 100vh;
+            }
+        }
+    }
+
+    &__container {
+        grid-area: info;
+
+        padding: 3.8rem 8vw;
+
+        @media only screen and (min-width: $lg) {
+            padding: 3.8rem 11.4vw;
+        }
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 600;
+        letter-spacing: 0.75rem;
+        color: var(--gray-900);
+
+
+        // max-width: 4.25rem;
+
+        @media only screen and (min-width: $med) {
+            width: 70%;
+            text-align: left;
+            line-height: 1.1;
+            letter-spacing: 1rem;
+        }
+
+        @media only screen and (min-width: $lg) {
+            font-size: 4rem;
+        }
+
+        &--thin {
+            font-weight: 300;
+            color: var(--pink-400)
+        }
+    }
+
+    &__text {
+        padding-block: 1.25rem 2rem;
+
+        text-align: center;
+        font-size: 0.9rem;
+
+        color: var(--pink-400);
+        line-height: 1.6;
+
+        @media only screen and (min-width: $med) {
+            text-align: left;
+            width: 85%;
+
+            font-size: 1rem;
+        }
+
+    }
+
+    &__email {
+        width: 100%;
+        height: 3rem;
+        position: relative;
+
+        padding-left: 1.4375rem;
+
+        display: flex;
+        align-items: center;
+
+        border-radius: 2.5rem;
+        border: 1px solid var(--pink-400);
+
+        @media only screen and (min-width: $med) {
+            height: 3.4375rem;
+            width: 85%;
+        }
+
+        &--error {
+            border: 2px solid var(--red-500);
+        }
+
+        &--input {
+            border: none;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--gray-900);
+            background-color: inherit;
+
+            @media only screen and (min-width: $med) {
+                font-size: 1rem;
+            }
+
+            &::placeholder {
+                color: var(--pink-400);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &--button {
+            margin-left: auto;
+            width: 4.0625rem;
+            height: 3rem;
+            border-radius: 2.5rem;
+            border: none;
+            background: linear-gradient(135deg, var(--gradient-2-start), var(--gradient-2-end));
+
+            position: absolute;
+            right: -0.0625rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0px 0px 20px var(--gradient-2-start);
+
+            @media only screen and (min-width: $med) {
+                height: 3.4375rem;
+            }
+
+            @media only screen and (min-width: $lg) {
+                width: 6.25rem;
+            }
+
+
+            &:hover {
+                cursor: pointer;
+                background: linear-gradient(135deg, var(--gradient-2-start), var(--gradient-2-start));
+                box-shadow: 2px 10px 20px var(--gradient-2-end);
+
+                width: 4.125rem;
+                right: -0.125rem;
+
+                @media only screen and (min-width: $lg) {
+                    width: 6.3125rem;
+                }
+            }
+
+            &:active {
+                background: linear-gradient(135deg, var(--gradient-2-end), var(--gradient-2-end));
+            }
+        }
+    }
+
+    &__error-message {
+        font-size: 0.8125rem;
+        color: var(--red-500);
+        padding-inline-start: 1.4375rem;
+        padding-block-start: 0.625rem;
+    }
+
+    &__error-icon {
+        position: absolute;
+        right: 5.0625rem;
+
+        @media only screen and (min-width: $lg) {
+            right: 7.25rem;
+        }
+    }
+}
+
+.sr-only {
+    position: absolute !important;
+    /* Outside the DOM flow */
+    height: 1px;
+    width: 1px;
+    /* Nearly collapsed */
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE 7+ only support clip without commas */
+    clip: rect(1px, 1px, 1px, 1px);
+    /* All other browsers */
+}
+
+
+.attribution {
+    font-size: 0.6875rem;
+    text-align: center;
+
+    padding-block: 1rem;
+    width: 100%;
+    background-color: white;
+
+    a {
+        color: var(--attribution);
+    }
+}
