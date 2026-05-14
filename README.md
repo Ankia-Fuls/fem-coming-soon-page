@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/Ankia-Fuls/fem-coming-soon-page)
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
+- Live Site URL: [GitHub Pages](https://ankia-fuls.github.io/fem-coming-soon-page/)
 
 ## My process
 
@@ -73,7 +73,7 @@ export const useIsMobile = (breakpoint = DEFAULT_MOBILE_BREAKPOINT) => {
 };
 ```
 
-I used this function to check when the page changed size to change some of the formatting that couldn't just be changed with CSS.
+I used this function to check when the page changed size to change the image src. 
 
 
 ### Continued development
